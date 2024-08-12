@@ -1,3 +1,6 @@
-./venv
-venv
-env
+/venv
+/env
+*.pyc
+*.cfg
+__pycache_
+/psunote.tar.gz
