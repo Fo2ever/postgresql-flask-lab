@@ -10,24 +10,29 @@
       <div class="btn btn-disagle">{{ tag }}</div>
     </li>
     <li>
-      <button data-bs-toggle="modal" data-bs-target="#delete_tag" class="btn btn-danger">
-        Delete Tag
-      </button>
-      <div class="modal fade" id="delete_tag" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title text-danger" id="myModalLabel">Warning !</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              If you delete this tag, all notes referenced by this tag will also be deleted !!
-              <br>
-              You want delete: {{ tag_name }} ?
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <a href="{{ url_for('delete_tag', tag_name=tag_name) }}" class="btn btn-danger">Yes</a>
+      <div>
+        <button class="btn btn-warning">
+          <a class="text-decoration-none" href="{{ url_for('tag_edit', tag_id=tag_id) }}">Edit</a>
+        </button>
+        <button data-bs-toggle="modal" data-bs-target="#delete_tag" class="btn btn-danger">
+          Delete
+        </button>
+        <div class="modal fade" id="delete_tag" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-danger" id="myModalLabel">Warning !</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                If you delete this tag, all notes referenced by this tag will also be deleted !!
+                <br>
+                You want delete: {{ tag_name }} ?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="{{ url_for('delete_tag', tag_name=tag_name) }}" class="btn btn-danger">Yes</a>
+              </div>
             </div>
           </div>
         </div>
