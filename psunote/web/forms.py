@@ -43,4 +43,5 @@ BaseNoteForm = model_form(
 
 
 class NoteForm(BaseNoteForm):
-    tags = TagListField("Tag")
+    # tags = TagListField("Tag")
+    tag = TagListField("Tag")
